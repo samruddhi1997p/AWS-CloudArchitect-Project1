@@ -1,0 +1,48 @@
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+[ec2-user@ip-10-2-10-88 ~]$ mysql -u sprabhulkar -p -h secondaryreplicadb.cpzocfrpie7a.us-east-1.rd
+s.amazonaws.com
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.17 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> USE udacity
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MySQL [udacity]> CREATE TABLE example_db(
+    -> tutorial_id INT NOT NULL AUTO_INCREMENT,
+    -> tutorial_title VARCHAR(100) NOT NULL,
+    -> PRIMARY KEY ( tutorial_id )
+    -> );
+ERROR 1050 (42S01): Table 'example_db' already exists
+MySQL [udacity]> 
+MySQL [udacity]> 
+MySQL [udacity]> INSERT INTO example_db
+    -> (tutorial_id, tutorial_title)
+    -> VALUES
+    -> ("102", "Learn SQL");
+Query OK, 1 row affected (0.01 sec)
+
+MySQL [udacity]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| udacity            |
++--------------------+
+4 rows in set (0.01 sec)
+
+MySQL [udacity]> 

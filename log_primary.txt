@@ -1,0 +1,53 @@
+Last login: Tue Jul 28 19:06:50 2020 from ec2-3-16-146-1.us-east-2.compute.amazonaws.com
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+[ec2-user@ip-10-1-10-35 ~]$ mysql -u sprabhulkar -p -h primarydb.cnzitabos3my.us-east-2.rds.amazona
+ws.com
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 166
+Server version: 8.0.17 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> USE udacity
+Database changed
+MySQL [udacity]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| udacity            |
++--------------------+
+4 rows in set (0.00 sec)
+
+MySQL [udacity]> CREATE TABLE example_db(
+    -> tutorial_id INT NOT NULL AUTO_INCREMENT,
+    -> tutorial_title VARCHAR(100) NOT NULL,
+    -> PRIMARY KEY ( tutorial_id )
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+MySQL [udacity]> 
+MySQL [udacity]> 
+MySQL [udacity]> INSERT INTO example_db
+    -> (tutorial_id, tutorial_title)
+    -> VALUES
+    -> ("101", "Learn SQL");
+Query OK, 1 row affected (0.01 sec)
+
+MySQL [udacity]> select tutorial_title from example_db;
++----------------+
+| tutorial_title |
++----------------+
+| Learn SQL      |
++----------------+
+1 row in set (0.00 sec)
